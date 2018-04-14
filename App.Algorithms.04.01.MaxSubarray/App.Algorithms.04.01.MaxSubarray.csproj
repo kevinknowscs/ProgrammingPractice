@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9FB8F23A-FDCB-45AC-8950-69CAA2F2BEA4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>App.Algorithms._04._01.MaxSubarray</RootNamespace>
+    <RootNamespace>App.Algorithms.MaxSubarray</RootNamespace>
     <AssemblyName>App.Algorithms.04.01.MaxSubarray</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BruteForceFinder.cs" />
+    <Compile Include="DivideAndConquerFinder.cs" />
+    <Compile Include="IterativeFinder.cs" />
+    <Compile Include="MaxSubarrayFinderBase.cs" />
+    <Compile Include="MaxSubarrayResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
