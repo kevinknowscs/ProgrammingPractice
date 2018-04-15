@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.BinaryTreeIter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.SpiralIntoMatrix", "App.Problems.SpiralIntoMatrix\App.Problems.SpiralIntoMatrix.csproj", "{38693BC4-9B35-48AF-B785-07792BCCDB2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Algorithms.15.04.LCS", "App.Algorithms.15.04.LCS\App.Algorithms.15.04.LCS.csproj", "{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{38693BC4-9B35-48AF-B785-07792BCCDB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38693BC4-9B35-48AF-B785-07792BCCDB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38693BC4-9B35-48AF-B785-07792BCCDB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
