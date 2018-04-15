@@ -1,27 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Algorithms.LCS
 {
   class Program
   {
-    private enum SearchDirection
-    {
-      None,
-      Up,
-      Left,
-      Diagonal
-    }
-
-    private class LcsLengthCell
-    {
-      public SearchDirection Direction { get; set; }
-      public int Length { get; set; }
-    }
-
     private class LcsSearchContext
     {
       public LcsLengthCell[,] LcsLengths { get; set; }
@@ -100,6 +83,14 @@ namespace App.Algorithms.LCS
 
       var x = "ABCBDAB";
       var y = "BDCABA";
+
+      Console.WriteLine();
+      Console.WriteLine("x = {0}", x);
+      Console.WriteLine("y = {0}", y);
+      Console.WriteLine("Longest Common Subsequence = {0}", GetLcs(x, y));
+
+      x = "ACCGGTCGAGTGCGCGGAAGCCGGCCGAA";
+      y = "GTCGTTCGGAATGCCGTTGCTCTGTAAA";
 
       Console.WriteLine();
       Console.WriteLine("x = {0}", x);

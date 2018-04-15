@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace App.Problems.BinaryTreeIterator
 {
@@ -59,6 +60,28 @@ namespace App.Problems.BinaryTreeIterator
       }
 
       Console.WriteLine();
+      Console.WriteLine("Iterate Through Tree with Recursive Iterator using yield return");
+      Console.WriteLine("---------------------------------------------------------------");
+
+      var recursiveWrapper = new RecursivelyEnumerableBinaryTreeWrapper<string>(tree);
+
+      foreach (string val in recursiveWrapper)
+        Console.WriteLine(val);
+
+      // Using the enumerator's MoveNext() method, we're essentially accomplishing the same
+      // thing as the non-recursive version of GetNextNode(). In most languages, it isn't
+      // possible to implement a recursive, manually-controllable enumerator because we need 
+      // a way of returning the next result back to the caller. However, using C#'s
+      // "yield return" technique, we can accomplish this in an elegant way.
+
+      var enumerator = (recursiveWrapper as IEnumerable<string>).GetEnumerator();
+
+      Console.WriteLine();
+      Console.WriteLine("Calling the Enumerator methods manually (without foreach)");
+      Console.WriteLine("---------------------------------------------------------");
+
+      while (enumerator.MoveNext())
+        Console.WriteLine(enumerator.Current);
     }
   }
 }
