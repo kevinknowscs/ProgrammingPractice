@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Algorithms.04.01.MaxSubarray", "App.Algorithms.04.01.MaxSubarray\App.Algorithms.04.01.MaxSubarray.csproj", "{9FB8F23A-FDCB-45AC-8950-69CAA2F2BEA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems..Palindrome", "App.Problems..Palindrome\App.Problems..Palindrome.csproj", "{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.Fibonacci", "App.Problems.Fibonacci\App.Problems.Fibonacci.csproj", "{99E4E3E1-F3BB-4547-B734-4172147D51AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.BinaryTreeIterator", "App.Problems.BinaryTreeIterator\App.Problems.BinaryTreeIterator.csproj", "{EBF8B214-F389-4797-914E-DFBF1E99B003}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.SpiralIntoMatrix", "App.Problems.SpiralIntoMatrix\App.Problems.SpiralIntoMatrix.csproj", "{38693BC4-9B35-48AF-B785-07792BCCDB2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Algorithms.15.04.LCS", "App.Algorithms.15.04.LCS\App.Algorithms.15.04.LCS.csproj", "{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.Palindrome", "App.Problems.Palindrome\App.Problems.Palindrome.csproj", "{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{9FB8F23A-FDCB-45AC-8950-69CAA2F2BEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FB8F23A-FDCB-45AC-8950-69CAA2F2BEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FB8F23A-FDCB-45AC-8950-69CAA2F2BEA4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99E4E3E1-F3BB-4547-B734-4172147D51AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99E4E3E1-F3BB-4547-B734-4172147D51AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99E4E3E1-F3BB-4547-B734-4172147D51AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55ED5D74-4C5F-4C5B-83A1-4BBCD0588731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
