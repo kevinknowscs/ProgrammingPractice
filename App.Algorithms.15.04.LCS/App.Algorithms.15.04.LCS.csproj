@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LcsFinder.cs" />
     <Compile Include="LcsLengthCell.cs" />
+    <Compile Include="LcsSearchContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchDirection.cs" />
