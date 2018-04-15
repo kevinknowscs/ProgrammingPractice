@@ -17,21 +17,21 @@ namespace App.Problems.BinaryTreeIterator
 
     private IEnumerable<TData> EnumerateNodes(BinaryTreeNode<TData> node)
     {
-      if (node != null)
+      if (node == null)
+        yield break;
+
+      if (node.LeftNode != null)
       {
-        if (node.LeftNode != null)
-        {
-          foreach (TData val in EnumerateNodes(node.LeftNode))
-            yield return val;
-        }
+        foreach (TData val in EnumerateNodes(node.LeftNode))
+          yield return val;
+      }
 
-        yield return node.Data;
+      yield return node.Data;
 
-        if (node.RightNode != null)
-        {
-          foreach (TData val in EnumerateNodes(node.RightNode))
-            yield return val;
-        }
+      if (node.RightNode != null)
+      {
+        foreach (TData val in EnumerateNodes(node.RightNode))
+          yield return val;
       }
     }
 
