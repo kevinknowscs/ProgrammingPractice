@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Algorithms.15.04.LCS", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.Palindrome", "App.Problems.Palindrome\App.Problems.Palindrome.csproj", "{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Algorithms.15.01.RodCutting", "App.Algorithms.15.01.RodCutting\App.Algorithms.15.01.RodCutting.csproj", "{DC4CC736-BA84-4C3D-AAD6-189420D3E5E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA89AE5E-567E-47BD-A61E-0C67BC9BD1EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4CC736-BA84-4C3D-AAD6-189420D3E5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4CC736-BA84-4C3D-AAD6-189420D3E5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4CC736-BA84-4C3D-AAD6-189420D3E5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4CC736-BA84-4C3D-AAD6-189420D3E5E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
