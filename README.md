@@ -6,6 +6,15 @@ The project generally follows "Introduction to Algorithms", Third Edition (Corme
 other programming challenges that have been thrown at me during technical interviews.
 
 ## Workflow for Mastering a Technical Interview
+1. Ask clarifying questions
+2. Layout sample data with corner cases
+3. Discuss naive/inefficient solution
+4. Find more efficient solution
+5. Design & walk through the solution
+6. Code the solution
+7. Test the solution on the original sample data
+8. Optional: Discuss advanced topics
+
 * Think out loud so the interviewer can learn your thought process
 * Resist the temptation to jump directly into coding
 * Ask clarifying questions
