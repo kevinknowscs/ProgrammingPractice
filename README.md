@@ -29,7 +29,7 @@ other programming challenges that have been thrown at me during technical interv
   * Try to identify, intuitively, what is most likely the fastest possible solution
     * Example: I can see I'm going to need to examine every input, so I know the fastest solution is at least O(n)
     * Pro Tip: Most interview questions tend to have an obvious O(n^2) solution, and a non-obvious O(n) solution. That's *why* it's an interview question!!!
-    * A good approach is to simply assume there's an O(n) approach, then try to prove or disprove that hypothesis
+    * A viable approach is to simply assume there's an O(n) solution, then try to prove or disprove that hypothesis
   * How can it be faster? In other words, how can you avoid examining every possible permutation of input data?
     * Can you sort or reorganize the input data to make searching faster?
     * Is there something about the nature of input data as it relates to the output that can be exploited to avoid looking at all permutations
