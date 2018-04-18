@@ -35,6 +35,17 @@ other programming challenges that have been thrown at me during technical interv
     * Can you use a creative search direction (left-to-right only, right-to-left only, move in from each edge, spiral out from the middle, etc)
     * Can you use lookup tables somehow?
     * Can you pre-compute the answer, then subtract off input values to reach the final solution?
+  * Algorithmic Methods to consider for a faster solution
+    * Divide & Conquer (generally a recursive approach)
+    * Dynamic Programming (divide into sub problems, store results in a table)
+    * Iterative / Bottoms Up Approach - Similar to dynamic programming, but without recursion. Only track the subproblem solutions you actually need, not all of them
+    * Keeping intermediate lookup tables
+* Walk through the solution
+  * When you think you have an efficient solution, design the solution first, walking through the input data to show how it will work
+* Code the solution
+  * Think about corner cases and try to handle them naturally and elegantly without special-case if statements
+* Test the solution
+  * Walk through the original sample data to show that the solution works
 
 
     
