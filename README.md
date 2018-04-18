@@ -28,6 +28,7 @@ other programming challenges that have been thrown at me during technical interv
   * Think of progression in efficiency: O(2^n) -> O(n^2) -> O(n log[n]) -> O(n) -> O(log [n]) -> O(1)
   * Try to identify, intuitively, what is most likely the fastest possible solution
     * Example: I can see I'm going to need to examine every input, so I know the fastest solution is at least O(n)
+    * Pro Tip: Most interview questions tend to have an obvious O(n^2) solution, and a non-obvious O(n) solution. That's *why* it's an interview question!!!
   * How can it be faster? In other words, how can you avoid examining every possible permutation of input data?
     * Can you sort or reorganize the input data to make searching faster?
     * Is there something about the nature of input data as it relates to the output that can be exploited to avoid looking at all permutations
