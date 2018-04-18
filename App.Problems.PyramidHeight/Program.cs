@@ -36,26 +36,35 @@ namespace App.Problems.PyramidHeight
     //
     // Assume there are no missing nodes. Calculate the maximum height.
 
+    static int GetKeyIndex(int[][] pyramid, int row, int col)
+    {
+      int totalCols = pyramid.Length;  // Total row and column count are the same
+
+      // Convert the (row, col) coordinate into a single key value we can
+      // use in the dictionary lookup
+      return row * totalCols + col;
+    }
+
     static int MaxPath(int[][] pyramid, Dictionary<int, int> maxPaths, int row, int col)
     {
       // Here we use dynamic programming to keep track of previously computed heights
       // so that we don't need to recompute them over and over again.
 
-      int totalCols = pyramid.Length; // Total row and column count are the same
+      int keyIndex = GetKeyIndex(pyramid, row, col);
       int colCount = row + 1; // The number of columns in this row
 
-      if (maxPaths.ContainsKey(row * totalCols + col))
-        return maxPaths[row * totalCols + col];
+      if (maxPaths.ContainsKey(keyIndex))
+        return maxPaths[keyIndex];
 
       if (row >= pyramid.Length)
       {
-        maxPaths.Add(row * totalCols + col, 0);
+        maxPaths.Add(keyIndex, 0);
         return 0;
       }
 
       if (row == pyramid.Length - 1)
       {
-        maxPaths.Add(row * totalCols + col, pyramid[row][col]);
+        maxPaths.Add(keyIndex, pyramid[row][col]);
         return pyramid[row][col];
       }
 
@@ -63,7 +72,7 @@ namespace App.Problems.PyramidHeight
       int right = MaxPath(pyramid, maxPaths, row + 1, col + 1);
       int result = Math.Max(left, right) + pyramid[row][col];
 
-      maxPaths.Add(row * totalCols + col, result);
+      maxPaths.Add(keyIndex, result);
 
       return result;
     }
