@@ -39,6 +39,8 @@ other programming challenges that have been thrown at me during technical interv
     * Divide & Conquer (generally a recursive approach)
     * Dynamic Programming (divide into sub problems, store results in a table)
     * Iterative / Bottoms Up Approach - Similar to dynamic programming, but without recursion. Only track the subproblem solutions you actually need, not all of them
+    * Recursive decent (a divide & conquer approach to parsing)
+    * State machines
     * Keeping intermediate lookup tables
   * If you're still totally stumped, ask for a hint
 * Walk through the solution
@@ -62,7 +64,7 @@ other programming challenges that have been thrown at me during technical interv
   * For a faster, but less space efficient solution - store the number's complement in a lookup table
 * Rod Cutting - Text book dynamic programming example
 * Longest Common Subsequence - Dynamic programming using a first past to pre-compute a table so we know which direction to search, then a second, recursive pass to find the longest commong subsequence. It's pretty tricky and wouldn't be a very fair interview question in my view.
-* Detect a cycle in a graph with single links - Tortoise/Hare - One pointer jumps one segment ahead on each hop, the second "fast" pointer jumps two segments ahead. Another unfair interiew question in my opinion.
+* Detect a cycle in a graph with single links - Tortoise/Hare - One pointer jumps one segment ahead on each hop, the second "fast" pointer jumps two segments ahead. Another unfair interiew question in my opinion. Unless the interviewee has previously studied the approach, they would be unlikely to come up with it in an impromptu interview session. It's a "gotcha" question that doesn't really prove much about the skills of the candidate.
 * Fibonacci - Naive recursive algorithm is O(2^n). An iterative, bottoms-up approach is simple and O(n)
 * Palindrome - Pretty easy. Can be solved either with an iterative approach (move in from each edge) or a recusive solution. Both are O(n)
 * Missing integer in an array - Compute the expected sum with n * (n + 1) / 2. Then iterative over the values and subtract them. The number you have left is the missing integer. Tricky but easy once you know the answer.
