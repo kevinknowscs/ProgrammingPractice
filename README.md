@@ -46,6 +46,11 @@ other programming challenges that have been thrown at me during technical interv
   * Think about corner cases and try to handle them naturally and elegantly without special-case if statements
 * Test the solution
   * Walk through the original sample data to show that the solution works
+* Advanced topics
+  * Discuss time/space tradeoffs
+  * Is the solution thread safe? If not, how can it be extended to be thread safe?
+  * Does the solution lend itself to parallelization, and if so, how?
+  * Could the solution be divided and scaled out onto a server farm?
 
 
     
