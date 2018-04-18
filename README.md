@@ -40,6 +40,7 @@ other programming challenges that have been thrown at me during technical interv
     * Dynamic Programming (divide into sub problems, store results in a table)
     * Iterative / Bottoms Up Approach - Similar to dynamic programming, but without recursion. Only track the subproblem solutions you actually need, not all of them
     * Keeping intermediate lookup tables
+  * If you're still totally stumped, ask for a hint
 * Walk through the solution
   * When you think you have an efficient solution, design the solution first, walking through the input data to show how it will work
 * Code the solution
