@@ -52,6 +52,20 @@ other programming challenges that have been thrown at me during technical interv
   * Is the solution thread safe? If not, how can it be extended to be thread safe?
   * Does the solution lend itself to parallelization, and if so, how?
   * Could the solution be divided and scaled out onto a server farm?
+  
+## Solution Examples
+* Number of bits in a byte - Use a pre-computed lookup table
+* Maximum Subarray - Iterative, bottoms-up approach gives an O(n) solution
+* Find a pair of values that sum to a given value
+  * If the values are sorted, move in from each end to find the pair(s)
+  * If not sorted, sort them -> O(n log[n])
+  * For a faster, but less space efficient solution - store the number's complement in a lookup table
+* Rod Cutting - Text book dynamic programming example
+* Longest Common Subsequence - Dynamic programming using a first past to pre-compute a table so we know which direction to search, then a second, recursive pass to find the longest commong subsequence. It's pretty tricky and wouldn't be a very fair interview question in my view.
+* Detect a cycle in a graph with single links - Tortoise/Hare - One pointer jumps one segment ahead on each hop, the second "fast" pointer jumps two segments ahead. Another unfair interiew question in my opinion.
+* Fibonacci - Naive recursive algorithm is O(2^n). An iterative, bottoms-up approach is simple and O(n)
+* Palindrome - Pretty easy. Can be solved either with an iterative approach (move in from each edge) or a recusive solution. Both are O(n)
+* Missing integer in an array - Compute the expected sum with n * (n + 1) / 2. Then iterative over the values and subtract them. The number you have left is the missing integer. Tricky but easy once you know the answer.
 
 
     
