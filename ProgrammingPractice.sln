@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Algorithms.15.01.RodCut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.BlockSizes", "App.Problems.BlockSizes\App.Problems.BlockSizes.csproj", "{F63AD16C-F586-4EA6-BF6C-C6856B9D0C61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.PyramidHeight", "App.PyramidHeight\App.Problems.PyramidHeight.csproj", "{5F76635A-A9F4-474F-AAB7-B992F4391338}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.PyramidHeight", "App.Problems.PyramidHeight\App.Problems.PyramidHeight.csproj", "{5F76635A-A9F4-474F-AAB7-B992F4391338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
