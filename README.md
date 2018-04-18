@@ -42,6 +42,7 @@ other programming challenges that have been thrown at me during technical interv
     * Recursive decent (a divide & conquer approach to parsing)
     * State machines
     * Keeping intermediate lookup tables
+    * Think of similar problems with known algorithms (e.g., "this looks a little bit like rod cutting, so dynamic programming might work")
   * If you're still totally stumped, ask for a hint
 * Walk through the solution
   * When you think you have an efficient solution, design the solution first, walking through the input data to show how it will work
