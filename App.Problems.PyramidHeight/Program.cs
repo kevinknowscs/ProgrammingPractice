@@ -49,7 +49,7 @@ namespace App.Problems.PyramidHeight
 
       if (row >= pyramid.Length)
       {
-        maxPaths.Add(row, 0);
+        maxPaths.Add(row * totalCols + col, 0);
         return 0;
       }
 
