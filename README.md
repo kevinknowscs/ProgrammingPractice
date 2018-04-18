@@ -18,7 +18,7 @@ other programming challenges that have been thrown at me during technical interv
   * Etc.
 * Layout some sample data
   * Verify how the solution should behave on some sample data
-  * Showcase an obvious corer cases with a separate set of sample data
+  * Showcase any obvious corner cases with a separate set of sample data
 * First approaches (which are almost always not the best solution)
   * Think of the most naive, brute force method of solving the problem
   * It will usually involving comparing every possible permutation of the input data to find a solution
@@ -43,6 +43,11 @@ other programming challenges that have been thrown at me during technical interv
     * State machines
     * Keeping intermediate lookup tables
     * Think of similar problems with known algorithms (e.g., "this looks a little bit like rod cutting, so dynamic programming might work")
+    * For a very advanced technique, map the problem to another known problem, solve it, then reverse the process to get the answer
+      * For example, the DeRemer and Penello LALR(1) algorithms maps the problem to a Strongly Connected Components problem for a graph
+      * In mathematics, Laplace and Fourier transforms are commonly used
+      * "This maps to the halting problem, so I know it's unsolvable"
+      * "This maps to the traveling sales person problem, so I know it's NP-complete"
   * If you're still totally stumped, ask for a hint
 * Walk through the solution
   * When you think you have an efficient solution, design the solution first, walking through the input data to show how it will work
