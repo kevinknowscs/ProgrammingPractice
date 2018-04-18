@@ -28,5 +28,15 @@ other programming challenges that have been thrown at me during technical interv
   * Think of progression in efficiency: O(2^n) -> O(n^2) -> O(n log[n]) -> O(n) -> O(log [n]) -> O(1)
   * Try to identify, intuitively, what is most likely the fastest possible solution
     * Example: I can see I'm going to need to examine every input, so I know the fastest solution is at least O(n)
+  * How can it be faster? In other words, how can you avoid examining every possible permutation of input data?
+	   * Can you sort or reorganize the input data to make searching faster?
+		  * This could at least get you to O(n log[n]) fairly easily, but that still might not be the best solution
+	   * Can you use information about the input data to avoid looking at all permutations
+	   * Can you use a creative search direction (left-to-right only, right-to-left only, move in from each edge, spiral out from the middle, etc)
+	   * Can you use lookup tables somehow?
+	   * Can you pre-compute the answer, then subtract off input values to reach the final solution?
+
+
+    
 
 
