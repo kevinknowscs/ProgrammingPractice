@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace App.Algorithms.RodCutting
 {
@@ -9,35 +10,37 @@ namespace App.Algorithms.RodCutting
       if (rodLength <= 0)
         return RodCutterResult.Empty;
 
-      RodCutterResult bestResult = new RodCutterResult();
+      var results = new Dictionary<int, RodCutterResult>();
 
-      for (int j = 1; j <= rodLength && j <= prices.Length; j++)
+      results.Add(0, RodCutterResult.Empty);
+
+      for (int j = 1; j <= rodLength; j++)
       {
         int maxPrice = Int32.MinValue;
-        int maxIndex = 0;
+        int maxLength = 0;
+        RodCutterResult maxPriorResult = null;
 
-        for (int i = 1; i <= j; i++)
+        for (int i = 1; i <= j && i <= prices.Length; i++)
         {
-          //if ()
-          //{
-
-          //}
+          int currPrice = prices[i - 1] + results[j - i].TotalPrice;
+          if (currPrice > maxPrice)
+          {
+            maxPrice = currPrice;
+            maxLength = i;
+            maxPriorResult = results[j - i];
+          }
         }
 
-        bestResult.CutLengths.Clear();
+        var currResult = new RodCutterResult();
 
-        //if (innerResult.TotalPrice + prices[i - 1] > bestResult.TotalPrice)
-        //{
-        //  bestResult.CutLengths.Clear();
-        //  bestResult.CutLengths.Add(i);
-        //  bestResult.CutLengths.AddRange(innerResult.CutLengths);
-        //  bestResult.TotalPrice = prices[i - 1] + innerResult.TotalPrice;
-        //}
+        currResult.TotalPrice = maxPrice;
+        currResult.CutLengths.Add(maxLength);
+        currResult.CutLengths.AddRange(maxPriorResult.CutLengths);
+
+        results.Add(j, currResult);
       }
 
-      // priorResults.Add(rodLength, bestResult);
-
-      return bestResult;
+      return results[rodLength];
     }
   }
 }
