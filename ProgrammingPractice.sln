@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.PyramidHeight"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.DigitalTrees", "App.Problems.DigitalTrees\App.Problems.DigitalTrees.csproj", "{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.Enumerators.cs", "App.Problems.Enumerators.cs\App.Problems.Enumerators.cs.csproj", "{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
