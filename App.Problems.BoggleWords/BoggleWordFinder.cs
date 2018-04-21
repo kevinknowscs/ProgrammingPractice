@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace App.Problems.BoggleWords
 {
@@ -12,11 +8,14 @@ namespace App.Problems.BoggleWords
     {
       BoggleBoard = boggleBoard;
       WordDictionary = wordDictionary;
+      MinimumWordLength = 3;
     }
 
     public BoggleBoard BoggleBoard { get; private set; }
 
     public WordDictionary WordDictionary { get; private set; }
+
+    public int MinimumWordLength { get; set; }
 
     private int GetIndex(int row, int col)
     {
@@ -43,7 +42,7 @@ namespace App.Problems.BoggleWords
       );
     }
 
-    private IEnumerable<int> GetSurroundingCells(int row, int col)
+    private IEnumerable<int> GetNeighbors(int row, int col)
     {
       if (IsLegalCell(row - 1, col - 1)) yield return GetIndex(row - 1, col - 1);
       if (IsLegalCell(row - 1, col))     yield return GetIndex(row - 1, col);
@@ -73,11 +72,14 @@ namespace App.Problems.BoggleWords
     {
       if (currNode.IsCompleteWord && !foundWords.Contains(currNode))
       {
-        AddPathToList(results, currPath);
+        if (currPath.Count >= MinimumWordLength)
+          AddPathToList(results, currPath);
+
+        // Keep track of found words so we don't add duplicates
         foundWords.Add(currNode);
       }
 
-      foreach (int nextIndex in GetSurroundingCells(currRow, currCol))
+      foreach (int nextIndex in GetNeighbors(currRow, currCol))
       {
         if (visitorTracker.Contains(nextIndex))
           continue; // We've already visited this node
@@ -91,9 +93,14 @@ namespace App.Problems.BoggleWords
           continue;
 
         nextNode = currNode.NextNodes[nextChar];
+        // TODO: Account for the "U" that follows "Q" on the "QU" dices
+
         currPath.Add(new WordPathNode(nextRow, nextCol, nextChar));
         visitorTracker.Add(nextIndex);
+
+        // Recurse into neighbors with viable prefixes
         FindWords(GetRow(nextIndex), GetColumn(nextIndex), results, nextNode, currPath, visitorTracker, foundWords);
+
         visitorTracker.Remove(nextIndex);
         currPath.RemoveAt(currPath.Count - 1);
       }
@@ -117,8 +124,12 @@ namespace App.Problems.BoggleWords
 
           var startPath = new List<WordPathNode>();
           startPath.Add(new WordPathNode(row, col, currChar));
+          visitorTracker.Add(GetIndex(row, col));
 
+          // Find all the words that start with this letter
           FindWords(row, col, results, WordDictionary.RootTreeNode.NextNodes[currChar], startPath, visitorTracker, foundWords);
+
+          visitorTracker.Remove(GetIndex(row, col));
         }
       }
 

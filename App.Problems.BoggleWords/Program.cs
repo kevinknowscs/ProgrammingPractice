@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace App.Problems.BoggleWords
 {
@@ -10,34 +7,40 @@ namespace App.Problems.BoggleWords
   {
     static void Main(string[] args)
     {
-      var dictionary = new string[]
-      {
-        "a",
-        "about",
-        "above",
-        "across",
-        "after",
-        "along",
-        "among",
-        "around",
-        "at",
-        "before",
-        "behind",
-        "below"
-      };
-
       var wordDictionary = new WordDictionary();
 
-      Console.WriteLine("Loading words into dictionary ...");
-      wordDictionary.LoadWords(dictionary);
+      wordDictionary.LoadWords(Assembly.GetExecutingAssembly().GetManifestResourceStream("App.Problems.BoggleWords.Dictionary.txt"));
 
+      // Have fun with it and try different board sizes
       var boggleBoard = new BoggleBoard(4, 4);
 
-      var finder = new BoggleWordFinder(boggleBoard, wordDictionary);
-      var result = finder.FindWords();
+      boggleBoard.Print();
+      Console.WriteLine();
 
-      foreach (int randomNumber in new RandomNumberEnumerator(16))
-        Console.WriteLine(randomNumber);
+      var finder = new BoggleWordFinder(boggleBoard, wordDictionary);
+      var results = finder.FindWords();
+
+      Console.WriteLine("Found {0} words", results.Count);
+      Console.WriteLine();
+
+      int index = 1;
+
+      foreach (var pathList in results)
+      {
+        Console.Write("Word {0} : ", index++);
+
+        foreach (var wordPathNode in pathList)
+          Console.Write(wordPathNode.Character);
+
+        Console.Write("   ");
+
+        foreach (var wordPathNode in pathList)
+        {
+          Console.Write("({0}, {1}) = {2}  ", wordPathNode.Row, wordPathNode.Column, wordPathNode.Character);
+        }
+
+        Console.WriteLine();
+      }
     }
   }
 }

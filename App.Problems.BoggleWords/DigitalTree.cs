@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace App.Problems.BoggleWords
@@ -13,27 +14,42 @@ namespace App.Problems.BoggleWords
 
     public DigitalTreeNode RootNode { get; private set; }
 
-    public void LoadWords(string[] words)
+    private void LoadWord(string word)
     {
       DigitalTreeNode currNode, newNode;
 
-      foreach (string word in words)
+      var upperWord = word.ToUpper();
+      currNode = RootNode;
+
+      foreach (char ch in upperWord)
       {
-        currNode = RootNode;
-
-        foreach (char ch in word)
+        if (currNode.NextNodes.ContainsKey(ch))
+          currNode = currNode.NextNodes[ch];
+        else
         {
-          if (currNode.NextNodes.ContainsKey(ch))
-            currNode = currNode.NextNodes[ch];
-          else
-          {
-            newNode = new DigitalTreeNode();
-            currNode.NextNodes.Add(ch, newNode);
-            currNode = newNode;
-          }
+          newNode = new DigitalTreeNode();
+          currNode.NextNodes.Add(ch, newNode);
+          currNode = newNode;
         }
+      }
 
-        currNode.IsCompleteWord = true;
+      currNode.IsCompleteWord = true;
+    }
+
+    public void LoadWords(string[] words)
+    {
+      foreach (string word in words)
+        LoadWord(word);
+    }
+
+    public void LoadWords(Stream wordStream)
+    {
+      using (var reader = new StreamReader(wordStream))
+      {
+        string line;
+
+        while ((line = reader.ReadLine()) != null)
+          LoadWord(line.Trim());
       }
     }
 

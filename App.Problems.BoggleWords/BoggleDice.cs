@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace App.Problems.BoggleWords
 {
   class BoggleDice
@@ -14,8 +9,8 @@ namespace App.Problems.BoggleWords
       SecondChars = secondChars;
     }
 
-    private string FirstChars { get; set; }
+    public string FirstChars { get; private set; }
 
-    private string SecondChars { get; set; }
+    public string SecondChars { get; private set; }
   }
 }

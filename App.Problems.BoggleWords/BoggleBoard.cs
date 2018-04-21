@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Problems.BoggleWords
 {
@@ -30,27 +26,30 @@ namespace App.Problems.BoggleWords
 
     private BoggleDice[,] boardLayout;
 
+    private int[,] selectedSides;
+
     public BoggleBoard(int rowCount, int columnCount)
     {
       RowCount = rowCount;
       ColumnCount = columnCount;
 
       boardLayout = new BoggleDice[rowCount, columnCount];
+      selectedSides = new int[rowCount, columnCount];
 
       int index = 0;
       foreach (int randomNumber in new RandomNumberEnumerator(rowCount * columnCount))
       {
-        boardLayout[index / columnCount, index % columnCount] = classicGameDice[randomNumber];
+        boardLayout[index / columnCount, index % columnCount] = classicGameDice[randomNumber % classicGameDice.Length];
         index++;
       }
 
-      InnerCharacters = new char[rowCount, columnCount];
+      var rng = new Random();
 
       for (int row = 0; row < rowCount; row++)
       {
         for (int col = 0; col < columnCount; col++)
         {
-          InnerCharacters[row, col] = 'a';
+          selectedSides[row, col] = rng.Next(0, 5);
         }
       }
     }
@@ -59,11 +58,22 @@ namespace App.Problems.BoggleWords
 
     public int ColumnCount { get; private set; }
 
-    private char[,] InnerCharacters { get; set; }
-
     public char GetCharacter(int row, int col)
     {
-      return InnerCharacters[row, col];
+      return boardLayout[row, col].FirstChars[selectedSides[row, col]];
+    }
+
+    public void Print()
+    {
+      for (int row=0; row < RowCount; row++)
+      {
+        for (int col=0; col < ColumnCount; col++)
+        {
+          Console.Write("{0} ", GetCharacter(row, col));
+        }
+
+        Console.WriteLine();
+      }
     }
   }
 }

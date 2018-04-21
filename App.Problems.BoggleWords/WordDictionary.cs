@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace App.Problems.BoggleWords
 {
@@ -18,6 +14,11 @@ namespace App.Problems.BoggleWords
     public DigitalTreeNode RootTreeNode => InnerTree.RootNode;
 
     public void LoadWords(string[] words)
+    {
+      InnerTree.LoadWords(words);
+    }
+
+    public void LoadWords(Stream words)
     {
       InnerTree.LoadWords(words);
     }
