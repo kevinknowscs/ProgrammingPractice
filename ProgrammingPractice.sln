@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.DigitalTrees",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.Enumerators.cs", "App.Problems.Enumerators.cs\App.Problems.Enumerators.cs.csproj", "{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.BoggleWords", "App.Problems.BoggleWords\App.Problems.BoggleWords.csproj", "{CD373A4E-FD7F-4290-9F6B-F78791E30626}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD373A4E-FD7F-4290-9F6B-F78791E30626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD373A4E-FD7F-4290-9F6B-F78791E30626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD373A4E-FD7F-4290-9F6B-F78791E30626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD373A4E-FD7F-4290-9F6B-F78791E30626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
