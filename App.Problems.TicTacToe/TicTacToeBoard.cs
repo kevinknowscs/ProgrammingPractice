@@ -103,7 +103,12 @@ namespace App.Problems.TicTacToe
       if (Cells[row, col] != 0)
         throw new Exception("The cell is not available");
 
+      if (TotalMovesMade == Size * Size)
+        throw new Exception("The board is full");
+
       Cells[row, col] = playerId;
+      TotalMovesMade++;
+
       return HasPlayerWonAfterMove(row, col, playerId);
     }
   }
