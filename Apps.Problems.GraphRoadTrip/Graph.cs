@@ -8,14 +8,14 @@ namespace Apps.Problems.GraphRoadTrip
     {
       Nodes = new List<Node>();
       Magnitudes = new Dictionary<Node, RoadTripMagnitudeResult>();
-      Populations = new Dictionary<Node, int>();
+      Populations = new Dictionary<KeyValuePair<Node, Node>, int>();
     }
 
     public List<Node> Nodes { get; private set; }
 
     public Dictionary<Node, RoadTripMagnitudeResult> Magnitudes { get; set; }
 
-    public Dictionary<Node, int> Populations { get; set; }
+    public Dictionary<KeyValuePair<Node, Node>, int> Populations { get; set; }
 
     public RoadTripMagnitudeResult GetRoadTripMagnitude(Node node)
     {
@@ -42,6 +42,11 @@ namespace Apps.Problems.GraphRoadTrip
 
     private int GetPopulation(Node node, Node excludeNode)
     {
+      var key = new KeyValuePair<Node, Node>(node, excludeNode);
+
+      if (Populations.ContainsKey(key))
+        return Populations[key];
+
       int population = node.Population;
 
       foreach (var neighbor in node.Neighbors)
@@ -49,6 +54,8 @@ namespace Apps.Problems.GraphRoadTrip
         if (neighbor != excludeNode)
           population += GetPopulation(neighbor, node);
       }
+
+      Populations[key] = population;
 
       return population;
     }
