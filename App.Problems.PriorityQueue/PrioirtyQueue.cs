@@ -20,13 +20,9 @@ namespace App.Problems.PriorityQueue
 
     public PriorityQueue<T> Enqueue(int priority, T item)
     {
-      Queue<T> queue = null;
+      Queue<T> queue;
 
-      if (Items.ContainsKey(priority))
-      {
-        queue = Items[priority];
-      }
-      else
+      if (!Items.TryGetValue(priority, out queue))
       {
         queue = new Queue<T>();
         Items.Add(priority, queue);
