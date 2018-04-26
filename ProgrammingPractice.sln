@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.PriorityQueue"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.TicTacToe", "App.Problems.TicTacToe\App.Problems.TicTacToe.csproj", "{21FC4B75-5D20-4BD2-A806-5B8970100BE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.ParseTimeFromString", "App.Problems.ParseTimeFromString\App.Problems.ParseTimeFromString.csproj", "{CB3561A5-FE75-4DF2-A3E4-738E5C182CA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{21FC4B75-5D20-4BD2-A806-5B8970100BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21FC4B75-5D20-4BD2-A806-5B8970100BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21FC4B75-5D20-4BD2-A806-5B8970100BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB3561A5-FE75-4DF2-A3E4-738E5C182CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3561A5-FE75-4DF2-A3E4-738E5C182CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3561A5-FE75-4DF2-A3E4-738E5C182CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3561A5-FE75-4DF2-A3E4-738E5C182CA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
