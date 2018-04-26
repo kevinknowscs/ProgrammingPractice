@@ -19,10 +19,12 @@ namespace Apps.Problems.GraphRoadTrip
 
     public RoadTripMagnitudeResult GetRoadTripMagnitude(Node node)
     {
-      if (Magnitudes.ContainsKey(node))
-        return Magnitudes[node];
+      RoadTripMagnitudeResult result;
 
-      var result = new RoadTripMagnitudeResult() { Magnitude = 0 };
+      if (Magnitudes.TryGetValue(node, out result))
+        return result;
+
+      result = new RoadTripMagnitudeResult() { Magnitude = 0 };
 
       foreach (var neighbor in node.Neighbors)
       {
@@ -42,12 +44,13 @@ namespace Apps.Problems.GraphRoadTrip
 
     private int GetPopulation(Node node, Node excludeNode)
     {
+      int population;
       var key = new KeyValuePair<Node, Node>(node, excludeNode);
 
-      if (Populations.ContainsKey(key))
-        return Populations[key];
+      if (Populations.TryGetValue(key, out population))
+        return population;
 
-      int population = node.Population;
+      population = node.Population;
 
       foreach (var neighbor in node.Neighbors)
       {
