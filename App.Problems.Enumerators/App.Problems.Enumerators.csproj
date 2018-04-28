@@ -45,8 +45,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RangeOfIntegers.cs" />
-    <Compile Include="RangeOfIntegersStandardCursor.cs" />
-    <Compile Include="RangeOfIntegersYieldingCursor.cs" />
+    <Compile Include="RangeOfIntegersStandardEnumerable.cs" />
+    <Compile Include="RangeOfIntegersYieldingEnumerable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

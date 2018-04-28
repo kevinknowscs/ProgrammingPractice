@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace App.Problems.Enumerators
 {
-  class RangeOfIntegersStandardCursor : IEnumerable<int>
+  class RangeOfIntegersStandardEnumerable : IEnumerable<int>
   {
-    public RangeOfIntegersStandardCursor(RangeOfIntegers innerRange)
+    public RangeOfIntegersStandardEnumerable(RangeOfIntegers innerRange)
     {
       InnerRange = innerRange;
     }
@@ -29,13 +29,13 @@ namespace App.Problems.Enumerators
 
     private class StandardEnumerator : IEnumerator<int>
     { 
-      public StandardEnumerator(RangeOfIntegersStandardCursor cursor)
+      public StandardEnumerator(RangeOfIntegersStandardEnumerable owner)
       {
-        Cursor = cursor;
-        CurrentValue = Cursor.InnerRange.FirstValue - 1;
+        Owner = owner;
+        CurrentValue = Owner.InnerRange.FirstValue - 1;
       }
 
-      public RangeOfIntegersStandardCursor Cursor { get; private set; }
+      public RangeOfIntegersStandardEnumerable Owner { get; private set; }
 
       private int CurrentValue { get; set; }
 
@@ -45,7 +45,7 @@ namespace App.Problems.Enumerators
 
       public bool MoveNext()
       { 
-        if (CurrentValue >= Cursor.InnerRange.LastValue)
+        if (CurrentValue >= Owner.InnerRange.LastValue)
           return false;
 
         CurrentValue++;
@@ -55,7 +55,7 @@ namespace App.Problems.Enumerators
 
       public void Reset()
       {
-        CurrentValue = Cursor.InnerRange.FirstValue - 1;
+        CurrentValue = Owner.InnerRange.FirstValue - 1;
       }
 
       public void Dispose()

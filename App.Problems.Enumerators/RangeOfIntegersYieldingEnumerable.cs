@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace App.Problems.Enumerators
 {
-  class RangeOfIntegersYieldingCursor : IEnumerable<int>
+  class RangeOfIntegersYieldingEnumerable : IEnumerable<int>
   {
-    public RangeOfIntegersYieldingCursor(RangeOfIntegers innerRange)
+    public RangeOfIntegersYieldingEnumerable(RangeOfIntegers innerRange)
     {
       InnerRange = innerRange;
     }
