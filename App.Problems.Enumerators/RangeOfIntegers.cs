@@ -19,12 +19,12 @@ namespace App.Problems.Enumerators
 
     public int LastValue { get; set; }
 
-    public RangeOfIntegersStandardEnumerable GetStandardCursor()
+    public RangeOfIntegersStandardEnumerable GetStandardEnumerable()
     {
       return new RangeOfIntegersStandardEnumerable(this);
     }
 
-    public RangeOfIntegersYieldingEnumerable GetYieldingCursor()
+    public RangeOfIntegersYieldingEnumerable GetYieldingEnumerable()
     {
       return new RangeOfIntegersYieldingEnumerable(this);
     }

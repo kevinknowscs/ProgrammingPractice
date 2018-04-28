@@ -15,7 +15,7 @@ namespace App.Problems.Enumerators
       Console.WriteLine("List Range of Integers with Standard Enumerator");
       Console.WriteLine("-----------------------------------------------");
 
-      foreach (int val in myRange.GetStandardCursor())
+      foreach (int val in myRange.GetStandardEnumerable())
         Console.WriteLine(val);
 
       Console.WriteLine();
@@ -23,7 +23,7 @@ namespace App.Problems.Enumerators
       Console.WriteLine("List Range of Integers with Yielding Enumerator");
       Console.WriteLine("-----------------------------------------------");
 
-      foreach (int val in myRange.GetYieldingCursor())
+      foreach (int val in myRange.GetYieldingEnumerable())
         Console.WriteLine(val);
 
       Console.WriteLine();
