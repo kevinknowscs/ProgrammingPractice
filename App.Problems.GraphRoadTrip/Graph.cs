@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Apps.Problems.GraphRoadTrip
+namespace App.Problems.GraphRoadTrip
 {
   class Graph
   {

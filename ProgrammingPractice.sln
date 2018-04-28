@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.TicTacToe", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.ParseTimeFromString", "App.Problems.ParseTimeFromString\App.Problems.ParseTimeFromString.csproj", "{CB3561A5-FE75-4DF2-A3E4-738E5C182CA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apps.Problems.GraphRoadTrip", "Apps.Problems.GraphRoadTrip\Apps.Problems.GraphRoadTrip.csproj", "{1CB5F543-2C73-48BB-BD4A-C632F743E594}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.GraphRoadTrip", "App.Problems.GraphRoadTrip\App.Problems.GraphRoadTrip.csproj", "{1CB5F543-2C73-48BB-BD4A-C632F743E594}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
