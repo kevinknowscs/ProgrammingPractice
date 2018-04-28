@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Problems.Enumerators.cs
 {
@@ -43,21 +39,9 @@ namespace App.Problems.Enumerators.cs
 
       private int CurrentValue { get; set; }
 
-      object IEnumerator.Current
-      {
-        get
-        {
-          return CurrentValue;
-        }
-      }
+      object IEnumerator.Current => CurrentValue;
 
-      int IEnumerator<int>.Current
-      {
-        get
-        {
-          return CurrentValue;
-        }
-      }
+      int IEnumerator<int>.Current => CurrentValue;
 
       public bool MoveNext()
       { 
