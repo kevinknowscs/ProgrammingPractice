@@ -1,5 +1,5 @@
 ﻿
-namespace App.Problems.Enumerators.cs
+namespace App.Problems.Enumerators
 {
   class RangeOfIntegers
   {

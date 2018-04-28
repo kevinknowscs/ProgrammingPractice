@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.PyramidHeight"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.DigitalTrees", "App.Problems.DigitalTrees\App.Problems.DigitalTrees.csproj", "{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.Enumerators.cs", "App.Problems.Enumerators.cs\App.Problems.Enumerators.cs.csproj", "{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.BoggleWords", "App.Problems.BoggleWords\App.Problems.BoggleWords.csproj", "{CD373A4E-FD7F-4290-9F6B-F78791E30626}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.PriorityQueue", "App.Problems.PriorityQueue\App.Problems.PriorityQueue.csproj", "{37781CD6-8056-4262-BC70-C5F90E9DF420}"
@@ -34,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.ParseTimeFromString", "App.Problems.ParseTimeFromString\App.Problems.ParseTimeFromString.csproj", "{CB3561A5-FE75-4DF2-A3E4-738E5C182CA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.GraphRoadTrip", "App.Problems.GraphRoadTrip\App.Problems.GraphRoadTrip.csproj", "{1CB5F543-2C73-48BB-BD4A-C632F743E594}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.Enumerators", "App.Problems.Enumerators\App.Problems.Enumerators.csproj", "{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,10 +81,6 @@ Global
 		{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{948164B7-4F99-4AAB-BCCE-11A4575CE3AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CD373A4E-FD7F-4290-9F6B-F78791E30626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD373A4E-FD7F-4290-9F6B-F78791E30626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD373A4E-FD7F-4290-9F6B-F78791E30626}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -105,6 +101,10 @@ Global
 		{1CB5F543-2C73-48BB-BD4A-C632F743E594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CB5F543-2C73-48BB-BD4A-C632F743E594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CB5F543-2C73-48BB-BD4A-C632F743E594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A313B1D-BC06-4DE1-B70C-8CAA2E3CA479}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

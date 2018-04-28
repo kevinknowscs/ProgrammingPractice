@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace App.Problems.Enumerators.cs
+namespace App.Problems.Enumerators
 {
   class RangeOfIntegersStandardCursor : IEnumerable<int>
   {
