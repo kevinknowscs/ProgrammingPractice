@@ -16,6 +16,8 @@ namespace App.Problems.ParseTimeFromString
 
     private int SkipColon(string val, int pos)
     {
+      // I could just build the : and the space into the
+      // labels themselves, but this is a little cleaner
       return SkipChar(val, pos, ':');
     }
 
@@ -53,26 +55,25 @@ namespace App.Problems.ParseTimeFromString
       return pos;
     }
 
-    private int GetRetries(string val, int pos, out int result)
+    private int GetNextLabeledValue(string val, int pos, string label, out int result)
     {
       result = 0;
 
-      pos += RetriesLabel.Length;
+      pos += label.Length;
       pos = SkipColon(val, pos);
       pos = SkipSpaces(val, pos);
 
       return GetNextValue(val, pos, out result);
     }
 
+    private int GetRetries(string val, int pos, out int result)
+    {
+      return GetNextLabeledValue(val, pos, RetriesLabel, out result);
+    }
+
     private int GetTotalTime(string val, int pos, out int result)
     {
-      result = 0;
-
-      pos += TotalTimeLabel.Length;
-      pos = SkipColon(val, pos);
-      pos = SkipSpaces(val, pos);
-
-      return GetNextValue(val, pos, out result);
+      return GetNextLabeledValue(val, pos, TotalTimeLabel, out result);
     }
 
     public int GetTotalTimeSum(string val)
