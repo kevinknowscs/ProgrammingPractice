@@ -21,6 +21,11 @@ namespace App.Problems.TicTacToe
 
     private bool CheckForWinAtRow(int row, int playerId)
     {
+      // I could do this with a LINQ expression too, but for
+      // clarity and explicitness, I've chosen to use a standard
+      // for loop to keep it free of extraneous dependencies. I
+      // think this is in keeping with the intent of the challenge.
+
       for (int col=0; col < Size; col++)
       {
         if (Cells[row, col] != playerId)
