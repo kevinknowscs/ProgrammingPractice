@@ -6,7 +6,9 @@ namespace App.Problems.TicTacToe
   {
     static void Main(string[] args)
     {
-      var board = new TicTacToeBoard(3);
+      // var board = new SlowTicTacToeBoard(3);
+      // var board = new BetterTicTacToeBoard(3);
+      var board = new FastTicTacToeBoard(3);
 
       // 1 = X
       // 2 = 0

@@ -2,9 +2,9 @@
 
 namespace App.Problems.TicTacToe
 {
-  class TicTacToeBoard
+  public class SlowTicTacToeBoard
   {
-    public TicTacToeBoard(int size)
+    public SlowTicTacToeBoard(int size)
     {
       Size = size;
       Cells = new int[size, size];
@@ -21,12 +21,7 @@ namespace App.Problems.TicTacToe
 
     private bool CheckForWinAtRow(int row, int playerId)
     {
-      // I could do this with a LINQ expression too, but for
-      // clarity and explicitness, I've chosen to use a standard
-      // for loop to keep it free of extraneous dependencies. I
-      // think this is in keeping with the intent of the challenge.
-
-      for (int col=0; col < Size; col++)
+      for (int col = 0; col < Size; col++)
       {
         if (Cells[row, col] != playerId)
           return false;
@@ -37,7 +32,7 @@ namespace App.Problems.TicTacToe
 
     private bool CheckForWinAtColumn(int col, int playerId)
     {
-      for (int row=0; row < Size; row++)
+      for (int row = 0; row < Size; row++)
       {
         if (Cells[row, col] != playerId)
           return false;
@@ -58,7 +53,7 @@ namespace App.Problems.TicTacToe
 
     private bool CheckForWinAtDiagonal1(int playerId)
     {
-      for (int row=0; row < Size; row++)
+      for (int row = 0; row < Size; row++)
       {
         if (Cells[row, row] != playerId)
           return false;
@@ -69,7 +64,7 @@ namespace App.Problems.TicTacToe
 
     private bool CheckForWinAtDiagonal2(int playerId)
     {
-      for (int row=Size - 1; row >= 0; row--)
+      for (int row = Size - 1; row >= 0; row--)
       {
         if (Cells[row, Size - 1 - row] != playerId)
           return false;
@@ -78,21 +73,48 @@ namespace App.Problems.TicTacToe
       return true;
     }
 
-    private bool HasPlayerWonAfterMove(int row, int col, int playerId)
+    private bool CheckForWinAtAllRows(int playerId)
     {
+      // Scan each row
+      for (int currRow = 0; currRow < Size; currRow++)
+      {
+        if (CheckForWinAtRow(currRow, playerId))
+          return true;
+      }
+
+      return false;
+    }
+
+    private bool CheckForWinAtAllColumns(int playerId)
+    {
+      // Scan each column
+      for (int currCol = 0; currCol < Size; currCol++)
+      {
+        if (CheckForWinAtColumn(currCol, playerId))
+          return true;
+      }
+
+      return false;
+    }
+
+    private bool HasPlayerWon(int playerId)
+    {
+      // Slow O(N^2) algorithm
+      // Re-scan all rows, columns, and diagonals
+
       return (
-        CheckForWinAtRow(row, playerId) ||
-        CheckForWinAtColumn(col, playerId) ||
-        IsCellAlongDiagnoal1(row, col) && CheckForWinAtDiagonal1(playerId) ||
-        IsCellAlongDiagonal2(row, col) && CheckForWinAtDiagonal2(playerId)
+        CheckForWinAtAllRows(playerId) ||
+        CheckForWinAtAllColumns(playerId) ||
+        CheckForWinAtDiagonal1(playerId) ||
+        CheckForWinAtDiagonal2(playerId)
       );
     }
 
     public void EraseBoard()
     {
-      for (int row=0; row < Size; row++)
+      for (int row = 0; row < Size; row++)
       {
-        for (int col=0; col < Size; col++)
+        for (int col = 0; col < Size; col++)
           Cells[row, col] = 0;
       }
 
@@ -110,7 +132,7 @@ namespace App.Problems.TicTacToe
       Cells[row, col] = playerId;
       TotalMovesMade++;
 
-      return HasPlayerWonAfterMove(row, col, playerId);
+      return HasPlayerWon(playerId);
     }
   }
 }
