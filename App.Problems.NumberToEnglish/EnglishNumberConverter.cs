@@ -21,7 +21,7 @@ namespace App.Problems.NumberToEnglish
       return val % 10;
     }
 
-    public static string GetDigitText(int val, bool displayZero)
+    public static string GetDigitText(int val, bool displayZero = false)
     {
       switch (val)
       {
@@ -87,48 +87,90 @@ namespace App.Problems.NumberToEnglish
       }
     }
 
-    public static string ConvertSmallNumber(int val, bool displayZero)
+    public static void ConvertSmallNumber(int val, StringBuilder output)
     {
+      // Convert numbers from 0 to 999
+
+      if (val < 0 || val >= 1000)
+        throw new ArgumentOutOfRangeException();
+
       if (val >= 0 && val < 10)
-        return GetDigitText(val, displayZero);
+      {
+        // Handle 0 - 9
+        output.Append(GetDigitText(val));
+      }
+      else if (val >= 10 && val < 20)
+      {
+        // Handle 10 - 19
+        output.Append(GetTweenerText(val));
+      }
+      else if (val >= 20 && val < 100)
+      {
+        // Handle 20 - 99
+        int tensVal = GetTensValue(val);
+        int onesVal = GetOnesValue(val);
 
-      if (val >= 10 && val < 20)
-        return GetTweenerText(val);
+        output.Append(GetTensText(tensVal));
 
-      if (val >= 20 && val < 100)
-        return GetTensText(GetTensValue(val)) + " " + GetDigitText(GetOnesValue(val), false);
+        if (onesVal > 0)
+        {
+          output.Append(" ");
+          output.Append(GetDigitText(onesVal));
+        }
+      }
+      else if (val >= 100 && val < 1000)
+      {
+        // Handle 100 - 999
+        int hundredsVal = GetHundredsValue(val);
+        int remainderVal = val % 100;
 
-      if (val >= 100 && val < 1000)
-        return GetDigitText(GetHundredsValue(val), false) + " Hundred " + ConvertSmallNumber(val % 100, false);
+        output.Append(GetDigitText(hundredsVal));
+        output.Append(" Hundred");
 
-      throw new ArgumentOutOfRangeException();
+        if (remainderVal > 0)
+        {
+          output.Append(" ");
+          ConvertSmallNumber(remainderVal, output);
+        }
+      }
     }
 
-    public static void Convert(int val, bool displayZero, int thousandsCounter, StringBuilder output)
+    public static void Convert(int origVal, int currVal, int thousandsCounter, StringBuilder output)
     {
-      int currVal = val;
-
-      if (currVal >= 1000)
+      if (origVal == 0)
       {
-        Convert(currVal / 1000, false, thousandsCounter + 1, output);
-        output.Append(" ");
-
-        if (currVal % Math.Pow(1000, thousandsCounter) > 0)
-          output.Append(GetThousandsSuffix(thousandsCounter));
-
-        currVal %= 1000;
-
-        if (currVal > 0)
-          output.Append(", ");
+        // Handle special case: Zero
+        output.Append(GetDigitText(0, true));
+        return;
       }
 
-      output.Append(ConvertSmallNumber(currVal, thousandsCounter == 0 && val < 1000));
+      int currThousandsVal = currVal % 1000;
+      int nextVal = currVal / 1000;
+
+      if (nextVal > 0)
+      {
+        Convert(origVal, nextVal, thousandsCounter + 1, output);
+      }
+
+      if (currThousandsVal > 0)
+      {
+        if (nextVal > 0)
+          output.Append(" ");
+
+        ConvertSmallNumber(currThousandsVal, output);
+
+        if (thousandsCounter > 0)
+        {
+          output.Append(" ");
+          output.Append(GetThousandsSuffix(thousandsCounter));
+        }
+      }
     }
 
     public static string Convert(int val)
     {
       var output = new StringBuilder();
-      Convert(val, true, 0, output);
+      Convert(val, val, 0, output);
 
       return output.ToString();
     }
