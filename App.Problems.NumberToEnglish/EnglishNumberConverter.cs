@@ -21,11 +21,11 @@ namespace App.Problems.NumberToEnglish
       return val % 10;
     }
 
-    public static string GetDigitText(int val, bool displayZero = false)
+    public static string GetDigitText(int val)
     {
       switch (val)
       {
-        case 0: return displayZero ? "Zero" : String.Empty;
+        case 0: return String.Empty;
         case 1: return "One";
         case 2: return "Two";
         case 3: return "Three";
@@ -80,9 +80,9 @@ namespace App.Problems.NumberToEnglish
       switch (thousandsCounter)
       {
         case 0: return "";
-        case 1: return "Thousand";
-        case 2: return "Million";
-        case 3: return "Billion";
+        case 1: return " Thousand";
+        case 2: return " Million";
+        case 3: return " Billion";
         default: throw new ArgumentOutOfRangeException();
       }
     }
@@ -140,7 +140,7 @@ namespace App.Problems.NumberToEnglish
       if (origVal == 0)
       {
         // Handle special case: Zero
-        output.Append(GetDigitText(0, true));
+        output.Append("Zero");
         return;
       }
 
@@ -158,12 +158,7 @@ namespace App.Problems.NumberToEnglish
           output.Append(" ");
 
         ConvertSmallNumber(currThousandsVal, output);
-
-        if (thousandsCounter > 0)
-        {
-          output.Append(" ");
-          output.Append(GetThousandsSuffix(thousandsCounter));
-        }
+        output.Append(GetThousandsSuffix(thousandsCounter));
       }
     }
 

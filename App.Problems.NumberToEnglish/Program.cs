@@ -29,24 +29,13 @@ namespace App.Problems.NumberToEnglish
         Console.WriteLine("  Received: '{0}'", result);
       }
 
-      Console.WriteLine("PASSED: {0}", val);
+      Console.WriteLine("PASSED: {0} = '{1}'", val, result);
     }
     static void Main(string[] args)
     {
       PrintRange(0, 20);
       PrintRange(95, 105);
       PrintRange(995, 1010);
-
-      Console.WriteLine();
-
-      PrintValue(1000);
-      PrintValue(10000);
-      PrintValue(100000);
-      PrintValue(1000000);
-      PrintValue(10000000);
-      PrintValue(100000000);
-      PrintValue(1000000000);
-      PrintValue(567891);
 
       Console.WriteLine();
       Console.WriteLine("Testing Values");
