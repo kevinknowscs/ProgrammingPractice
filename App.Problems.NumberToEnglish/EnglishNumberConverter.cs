@@ -36,7 +36,6 @@ namespace App.Problems.NumberToEnglish
         case 8: return "Eight";
         case 9: return "Nine";
         default: throw new ArgumentOutOfRangeException();
-
       }
     }
 

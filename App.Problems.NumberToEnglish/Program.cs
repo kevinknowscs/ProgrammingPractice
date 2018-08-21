@@ -38,6 +38,11 @@ namespace App.Problems.NumberToEnglish
       PrintRange(995, 1010);
 
       Console.WriteLine();
+      Console.WriteLine("Some Edge Cases");
+      Console.WriteLine("---------------");
+      PrintValue(Int32.MaxValue);
+
+      Console.WriteLine();
       Console.WriteLine("Testing Values");
       Console.WriteLine("--------------");
       TestValue(0, "Zero");
