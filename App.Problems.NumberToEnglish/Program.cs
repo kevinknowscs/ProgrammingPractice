@@ -43,6 +43,20 @@ namespace App.Problems.NumberToEnglish
       PrintValue(Int32.MaxValue);
 
       Console.WriteLine();
+      Console.WriteLine("Some Random Values");
+      Console.WriteLine("------------------");
+      var rng = new Random(0);
+
+      for (int x = 0; x < 10; x++)
+        PrintValue(rng.Next(10, 100));
+
+      for (int x = 0; x < 10; x++)
+        PrintValue(rng.Next(995, 1999));
+
+      for (int x = 0; x < 10; x++)
+        PrintValue(rng.Next(999950, 1500000));
+
+      Console.WriteLine();
       Console.WriteLine("Testing Values");
       Console.WriteLine("--------------");
       TestValue(0, "Zero");

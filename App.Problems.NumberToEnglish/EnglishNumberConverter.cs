@@ -1,25 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace App.Problems.NumberToEnglish
 {
   public class EnglishNumberConverter
   {
-    private static int GetHundredsValue(int val)
-    {
-      return val / 100;
-    }
+    private static int GetHundredsValue(int val) => val / 100;
 
-    private static int GetTensValue(int val)
-    {
-      return (val % 100) / 10;
-    }
+    private static int GetTensValue(int val) => (val % 100) / 10;
 
-    private static int GetOnesValue(int val)
-    {
-      return val % 10;
-    }
+    private static int GetOnesValue(int val) => val % 10;
 
     private static string GetDigitText(int val)
     {
