@@ -106,16 +106,20 @@ namespace App.Problems.NumberToEnglish
 
     public static void Convert(int val, bool displayZero, int thousandsCounter, StringBuilder output)
     {
-      if (val >= 1000)
+      int currVal = val;
+
+      if (currVal >= 1000)
       {
         Convert(val / 1000, false, thousandsCounter + 1, output);
         output.Append(" ");
         output.Append(GetThousandsSuffix(thousandsCounter + 1));
-        output.Append(", ");
-        val %= 1000;
+        currVal %= 1000;
+
+        if (currVal > 0)
+          output.Append(", ");
       }
 
-      output.Append(ConvertSmallNumber(val, thousandsCounter == 0 && val < 1000));
+      output.Append(ConvertSmallNumber(currVal, thousandsCounter == 0 && val < 1000));
     }
 
     public static string Convert(int val)
