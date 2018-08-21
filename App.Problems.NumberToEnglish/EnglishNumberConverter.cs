@@ -110,9 +110,12 @@ namespace App.Problems.NumberToEnglish
 
       if (currVal >= 1000)
       {
-        Convert(val / 1000, false, thousandsCounter + 1, output);
+        Convert(currVal / 1000, false, thousandsCounter + 1, output);
         output.Append(" ");
-        output.Append(GetThousandsSuffix(thousandsCounter + 1));
+
+        if (currVal % Math.Pow(1000, thousandsCounter) > 0)
+          output.Append(GetThousandsSuffix(thousandsCounter));
+
         currVal %= 1000;
 
         if (currVal > 0)
