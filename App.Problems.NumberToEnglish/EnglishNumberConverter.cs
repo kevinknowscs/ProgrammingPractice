@@ -6,22 +6,22 @@ namespace App.Problems.NumberToEnglish
 {
   public class EnglishNumberConverter
   {
-    public static int GetHundredsValue(int val)
+    private static int GetHundredsValue(int val)
     {
       return val / 100;
     }
 
-    public static int GetTensValue(int val)
+    private static int GetTensValue(int val)
     {
       return (val % 100) / 10;
     }
 
-    public static int GetOnesValue(int val)
+    private static int GetOnesValue(int val)
     {
       return val % 10;
     }
 
-    public static string GetDigitText(int val)
+    private static string GetDigitText(int val)
     {
       switch (val)
       {
@@ -40,7 +40,7 @@ namespace App.Problems.NumberToEnglish
       }
     }
 
-    public static string GetTweenerText(int val)
+    private static string GetTweenerText(int val)
     {
       switch (val)
       {
@@ -58,7 +58,7 @@ namespace App.Problems.NumberToEnglish
       }
     }
 
-    public static string GetTensText(int val)
+    private static string GetTensText(int val)
     {
       switch (val)
       {
@@ -75,7 +75,7 @@ namespace App.Problems.NumberToEnglish
       }
     }
 
-    public static string GetThousandsSuffix(int thousandsCounter)
+    private static string GetThousandsSuffix(int thousandsCounter)
     {
       switch (thousandsCounter)
       {
@@ -87,9 +87,9 @@ namespace App.Problems.NumberToEnglish
       }
     }
 
-    public static void ConvertSmallNumber(int val, StringBuilder output)
+    private static void AppendThousandsValueText(int val, StringBuilder output)
     {
-      // Convert numbers from 0 to 999
+      // Handle numbers from 0 to 999
 
       if (val < 0 || val >= 1000)
         throw new ArgumentOutOfRangeException();
@@ -130,12 +130,12 @@ namespace App.Problems.NumberToEnglish
         if (remainderVal > 0)
         {
           output.Append(" ");
-          ConvertSmallNumber(remainderVal, output);
+          AppendThousandsValueText(remainderVal, output);
         }
       }
     }
 
-    public static void Convert(int origVal, int currVal, int thousandsCounter, StringBuilder output)
+    private static void AppendValueText(int origVal, int currVal, int thousandsCounter, StringBuilder output)
     {
       if (origVal == 0)
       {
@@ -148,16 +148,14 @@ namespace App.Problems.NumberToEnglish
       int nextVal = currVal / 1000;
 
       if (nextVal > 0)
-      {
-        Convert(origVal, nextVal, thousandsCounter + 1, output);
-      }
+        AppendValueText(origVal, nextVal, thousandsCounter + 1, output);
 
       if (currThousandsVal > 0)
       {
         if (nextVal > 0)
           output.Append(" ");
 
-        ConvertSmallNumber(currThousandsVal, output);
+        AppendThousandsValueText(currThousandsVal, output);
         output.Append(GetThousandsSuffix(thousandsCounter));
       }
     }
@@ -165,7 +163,7 @@ namespace App.Problems.NumberToEnglish
     public static string Convert(int val)
     {
       var output = new StringBuilder();
-      Convert(val, val, 0, output);
+      AppendValueText(val, val, 0, output);
 
       return output.ToString();
     }
