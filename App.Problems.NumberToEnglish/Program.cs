@@ -41,6 +41,7 @@ namespace App.Problems.NumberToEnglish
       Console.WriteLine("Some Edge Cases");
       Console.WriteLine("---------------");
       PrintValue(Int32.MaxValue);
+      PrintValue(Int32.MinValue + 1);
 
       Console.WriteLine();
       Console.WriteLine("Some Random Values");
@@ -72,7 +73,7 @@ namespace App.Problems.NumberToEnglish
       TestValue(10000, "Ten Thousand");
       TestValue(10001, "Ten Thousand One");
       TestValue(100000, "One Hundred Thousand");
-      TestValue(100000, "One Hundred Thousand");
+      TestValue(100001, "One Hundred Thousand One");
       TestValue(1000000, "One Million");
       TestValue(1000001, "One Million One");
       TestValue(10000000, "Ten Million");

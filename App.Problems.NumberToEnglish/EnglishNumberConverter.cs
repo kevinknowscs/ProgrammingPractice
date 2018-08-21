@@ -133,6 +133,13 @@ namespace App.Problems.NumberToEnglish
         return;
       }
 
+      if (origVal < 0)
+      {
+        output.Append("Negative ");
+        AppendValueText(-origVal, -currVal, thousandsCounter, output);
+        return;
+      }
+
       int currThousandsVal = currVal % 1000;
       int nextVal = currVal / 1000;
 
