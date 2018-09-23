@@ -16,6 +16,16 @@ namespace App.Problems.SnakesAndLadders
         { -1, 15, -1, -1, -1, -1 }
       };
 
+      //var input = new int[,]
+      //{
+      //  { -1, -1, -1, -1, -1, -1 },
+      //  { -1, -1, -1, -1, -1, -1 },
+      //  { -1, -1, -1, -1, -1, -1 },
+      //  { -1, 2, -1, -1, 2, -1 },
+      //  { 2, 2, 2, 2, 2, 2 },
+      //  { -1, 2, 2, 2, 2, 2 }
+      //};
+
       var board = new SnakesAndLaddersBoard(6, input);
 
       Console.WriteLine(board.Solve());

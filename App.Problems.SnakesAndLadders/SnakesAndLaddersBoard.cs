@@ -67,6 +67,7 @@ namespace App.Problems.SnakesAndLadders
 
       currentSearch.Add(cellNo);
 
+      bool hasSolution = false;
       int min = Int32.MaxValue;
 
       if (scanned.ContainsKey(cellNo))
@@ -77,7 +78,10 @@ namespace App.Problems.SnakesAndLadders
           {
             int currResult = Solve(scanned, currentSearch, saved, indirectCellNo);
             if (currResult < min)
+            {
+              hasSolution = true;
               min = currResult;
+            }
           }
         }
       }
@@ -90,17 +94,21 @@ namespace App.Problems.SnakesAndLadders
         {
           if (!currentSearch.Contains(prevCellNo))
           {
-            int currResult = Solve(scanned, currentSearch, saved, prevCellNo) + 1;
-            if (currResult < min)
-              min = currResult;
+            int currResult = Solve(scanned, currentSearch, saved, prevCellNo);
+            if (currResult != -1 && currResult + 1 < min)
+            {
+              hasSolution = true;
+              min = currResult + 1;
+            }
           }
         }
       }
 
-      saved.Add(cellNo, min);
+      int result = hasSolution ? min : -1;
+      saved.Add(cellNo, result);
       currentSearch.Remove(cellNo);
 
-      return min;
+      return result;
     }
 
     public int Solve()
