@@ -42,7 +42,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Problems.NumberToEnglish", "App.Problems.NumberToEnglish\App.Problems.NumberToEnglish.csproj", "{7C03A5E3-2CB6-42AD-A80D-229EF09E84CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.RubiksCube", "App.Problems.RubiksCube\App.Problems.RubiksCube.csproj", "{C428373D-B067-47F2-8B71-B7E8D01F6715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Problems.RubiksCube", "App.Problems.RubiksCube\App.Problems.RubiksCube.csproj", "{C428373D-B067-47F2-8B71-B7E8D01F6715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Problems.SnakesAndLadders", "App.Problems.SnakesAndLadders\App.Problems.SnakesAndLadders.csproj", "{F71FD164-2ECD-4E19-842B-BAED269719A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,6 +124,10 @@ Global
 		{C428373D-B067-47F2-8B71-B7E8D01F6715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C428373D-B067-47F2-8B71-B7E8D01F6715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C428373D-B067-47F2-8B71-B7E8D01F6715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71FD164-2ECD-4E19-842B-BAED269719A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71FD164-2ECD-4E19-842B-BAED269719A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71FD164-2ECD-4E19-842B-BAED269719A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71FD164-2ECD-4E19-842B-BAED269719A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
