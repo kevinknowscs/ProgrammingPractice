@@ -77,7 +77,7 @@ namespace App.Problems.SnakesAndLadders
           if (!currentSearch.Contains(indirectCellNo))
           {
             int currResult = Solve(scanned, currentSearch, saved, indirectCellNo);
-            if (currResult < min)
+            if (currResult != -1 && currResult < min)
             {
               hasSolution = true;
               min = currResult;
