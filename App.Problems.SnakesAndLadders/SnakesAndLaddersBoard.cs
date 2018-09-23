@@ -16,22 +16,14 @@ namespace App.Problems.SnakesAndLadders
 
     public int[,] Input { get; }
 
-    private int GetRow(int cellNo)
+    private (int, int) GetRowAndColumn(int cellNo)
     {
-      return Size - (cellNo - 1) / Size - 1;
-    }
-
-    private int GetColumn(int cellNo)
-    {
+      int row = Size - (cellNo - 1) / Size - 1;
       int rowOffset = (cellNo - 1) / Size;
       int offset = (cellNo - 1) % Size;
+      int column = (rowOffset % 2 == 0) ? offset : Size - offset - 1;
 
-      return (rowOffset % 2 == 0) ? offset : Size - offset - 1;
-    }
-
-    private int GetCellNo(int row, int col)
-    {
-      return 0;
+      return (row, column);
     }
 
     private Dictionary<int, List<int>> ScanCells()
@@ -40,8 +32,7 @@ namespace App.Problems.SnakesAndLadders
 
       for (int cellNo=1; cellNo <= Size * Size; cellNo++)
       {
-        int row = GetRow(cellNo);
-        int col = GetColumn(cellNo);
+        (int row, int col) = GetRowAndColumn(cellNo);
 
         if (Input[row, col] != -1)
         {
@@ -93,8 +84,7 @@ namespace App.Problems.SnakesAndLadders
 
       for (int prevCellNo=cellNo-1; prevCellNo > cellNo - 1 - Size && prevCellNo > 0; prevCellNo--)
       {
-        int currRow = GetRow(prevCellNo);
-        int currColumn = GetColumn(prevCellNo);
+        (int currRow, int currColumn) = GetRowAndColumn(prevCellNo);
 
         if (Input[currRow, currColumn] == -1)
         {
