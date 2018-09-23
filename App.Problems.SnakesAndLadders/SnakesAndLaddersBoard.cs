@@ -90,16 +90,13 @@ namespace App.Problems.SnakesAndLadders
       {
         (int currRow, int currColumn) = GetRowAndColumn(prevCellNo);
 
-        if (Input[currRow, currColumn] == -1)
+        if (Input[currRow, currColumn] == -1 && !currentSearch.Contains(prevCellNo))
         {
-          if (!currentSearch.Contains(prevCellNo))
+          int currResult = Solve(scanned, currentSearch, saved, prevCellNo);
+          if (currResult != -1 && currResult + 1 < min)
           {
-            int currResult = Solve(scanned, currentSearch, saved, prevCellNo);
-            if (currResult != -1 && currResult + 1 < min)
-            {
-              hasSolution = true;
-              min = currResult + 1;
-            }
+            hasSolution = true;
+            min = currResult + 1;
           }
         }
       }
