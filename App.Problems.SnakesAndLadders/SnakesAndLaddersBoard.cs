@@ -74,6 +74,8 @@ namespace App.Problems.SnakesAndLadders
         return 0;
       }
 
+      currentSearch.Add(cellNo);
+
       int min = Int32.MaxValue;
 
       if (scanned.ContainsKey(cellNo))
@@ -82,10 +84,7 @@ namespace App.Problems.SnakesAndLadders
         {
           if (!currentSearch.Contains(indirectCellNo))
           {
-            currentSearch.Add(indirectCellNo);
             int currResult = Solve(scanned, currentSearch, saved, indirectCellNo);
-            currentSearch.Remove(indirectCellNo);
-
             if (currResult < min)
               min = currResult;
           }
@@ -101,10 +100,7 @@ namespace App.Problems.SnakesAndLadders
         {
           if (!currentSearch.Contains(prevCellNo))
           {
-            currentSearch.Add(prevCellNo);
             int currResult = Solve(scanned, currentSearch, saved, prevCellNo) + 1;
-            currentSearch.Remove(prevCellNo);
-
             if (currResult < min)
               min = currResult;
           }
@@ -112,16 +108,14 @@ namespace App.Problems.SnakesAndLadders
       }
 
       saved.Add(cellNo, min);
+      currentSearch.Remove(cellNo);
 
       return min;
     }
 
     public int Solve()
     {
-      var currentSearch = new HashSet<int>();
-      currentSearch.Add(Size * Size);
-
-      return Solve(ScanCells(), currentSearch, new Dictionary<int, int>(), Size * Size);
+      return Solve(ScanCells(), new HashSet<int>(), new Dictionary<int, int>(), Size * Size);
     }
   }
 }
